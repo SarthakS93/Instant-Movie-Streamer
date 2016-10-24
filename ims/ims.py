@@ -5,7 +5,7 @@ import sys
 
 import requests
 from bs4 import BeautifulSoup
-
+from piratebayCrawler import main
 DEBUG = False
 
 
@@ -60,7 +60,14 @@ try:
     print 'Searching....'
     torrent_url = get_torrent_url(url)
 except Exception as e:
-    print e
+    #print e
+    print 'Taking a bit longer....Please wait..'
+    if sys.argv[0] == 'ims.py':
+        movie_name = ' '.join(sys.argv[2 : ])
+    else:
+        movie_name = ' '.join(sys.argv[1 : ])
+    print movie_name
+    main(movie_name)
     exit()
 if torrent_url:
     print ('Streaming Torrent: ' + torrent_url)
