@@ -9,7 +9,7 @@ setup(name="ims",
 	  author_email="yask123@gmail.com",
 	  license='MIT',
 	  packages=["ims"],
-	  scripts=["bin/ims"],
+	  scripts=["bin/ims", "bin/piratebayCrawler"],
 	  install_requires=[
 		  'BeautifulSoup4',
 		  'requests'],
